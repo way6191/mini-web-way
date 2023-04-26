@@ -98,6 +98,10 @@
 		display: none;
 	}
 
+	.phonenav ul {
+		margin-right: 0;
+	}
+
 	.phonenav aside li,
 	a {
 		padding-top: 4px;
