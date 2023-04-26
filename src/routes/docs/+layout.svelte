@@ -65,6 +65,7 @@
 		display: flex;
 		justify-content: flex-start;
 		overflow: hidden;
+		overflow-x: hidden;
 	}
 
 	.page {
@@ -73,6 +74,7 @@
 		height: 100%;
 		min-width: 300px;
 		overflow: auto;
+		overflow-x: hidden;
 	}
 
 	.nav {
@@ -82,6 +84,7 @@
 		max-width: 250px;
 		flex: auto;
 		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	.nav nav > ul {
@@ -96,10 +99,6 @@
 
 	.phonenav {
 		display: none;
-	}
-
-	.phonenav ul {
-		margin-right: 0;
 	}
 
 	.phonenav aside li,
