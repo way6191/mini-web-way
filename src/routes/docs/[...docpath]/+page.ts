@@ -1,9 +1,8 @@
+import { getDocContent } from '$lib/utils';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
-	const doc = await import(`/src/docs/${params.docpath}.md`);
-	const content = doc.default;
-
+	const content = getDocContent(params.docpath);
 	return {
 		content
 	};

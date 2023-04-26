@@ -1,17 +1,9 @@
 import { redirect } from '@sveltejs/kit';
 import type { LayoutLoad } from './$types';
 
-export const load: LayoutLoad = async ({ url }) => {
-	const allDocsCompo = import.meta.glob('/src/docs/**/*.md');
-	const iterableDocs = Object.entries(allDocsCompo);
-
-	const allDocsPath = await Promise.all(
-		iterableDocs.map(async ([path]) => {
-			return {
-				path
-			};
-		})
-	);
+export const load: LayoutLoad = async ({ url, fetch }) => {
+	const response = await fetch(`/api/docs/alldocspath`);
+	const allDocsPath = await response.json();
 
 	if (url.pathname === '/docs') {
 		const defaulturl = allDocsPath[0].path.slice(4, -3);
